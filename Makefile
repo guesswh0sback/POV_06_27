@@ -3,7 +3,7 @@ FIRMWARE ?= blink
 
 # --- Variables globales ---
 MCU = atmega328p
-F_CPU = 13000000UL
+F_CPU = 13000000
 PORT = COM5
 PROGRAMMER = usbasp
 
@@ -37,7 +37,7 @@ $(HEX): $(ELF)
 # Téléversement
 install: $(HEX)
 	@echo "Téléversement de $(FIRMWARE) sur la carte..."
-	avrdude -v -p $(MCU) -c $(PROGRAMMER) -P $(PORT) -b 115200 -U flash:w:$(HEX):i
+	avrdude -v -p $(MCU) -c $(PROGRAMMER) -P $(PORT) -b $(F_CPU) -U flash:w:$(HEX):i
 	@echo "Téléversement terminé !"
 
 # Nettoyage
