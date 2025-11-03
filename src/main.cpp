@@ -1,18 +1,17 @@
-#include <Arduino.h>
 
-// put function declarations here:
-int myFunction(int, int);
+#include <avr/io.h>
+#include <util/delay.h>
 
-void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
-}
+int main(void) {
+  // Configure le bit 6 du registre DDRD en sortie
+  DDRD |= (1 << PD6);
+  PORTD |= (1 << PD6);
 
-void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  // Boucle infinie
+  while (1) {
+    PORTD &= 0;
+    _delay_ms(1000);
+    PORTD |= (1 << PD6);
+    _delay_ms(1000);
+  }
 }
