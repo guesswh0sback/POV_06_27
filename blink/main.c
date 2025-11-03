@@ -9,7 +9,7 @@ int main(void) {
 
   // Boucle infinie
   while (1) {
-    PORTD &= 0;
+    PORTD &= ~(1 << PD6);
     _delay_ms(1000);
     PORTD |= (1 << PD6);
     _delay_ms(1000);
