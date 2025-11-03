@@ -3,9 +3,9 @@ FIRMWARE ?= blink
 
 # --- Variables globales ---
 MCU = atmega328p
-F_CPU = 16000000UL
+F_CPU = 13000000UL
 PORT = COM5
-PROGRAMMER = arduino
+PROGRAMMER = usbasp
 
 SRC = $(FIRMWARE)/main.c
 BUILD_DIR = build
@@ -19,7 +19,7 @@ OBJ = $(BUILD_DIR)/main.o
 all: $(HEX)
 
 $(BUILD_DIR):
-	if not exist $(BUILD_DIR) mkdir $(BUILD_DIR)
+	@mkdir -p $(BUILD_DIR)
 
 $(OBJ): $(SRC) | $(BUILD_DIR)
 	@echo "Compilation de $(SRC) en $(OBJ)..."
