@@ -1,5 +1,5 @@
 # --- Choix du firmware ---
-FIRMWARE ?= blink
+FIRMWARE ?= led_driver
 
 # --- Variables globales ---
 MCU = atmega328p
