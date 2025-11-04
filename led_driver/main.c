@@ -11,7 +11,7 @@
 void spi_init(){
     DDRB |= (1 << PB3) | (1 << PB5); //set MOSI and SCK as Output
     DDRC |= (1 << PC1) | (1 << PC2); //set LE and OE as Output
-    SPCR = (1 << SPE) | (1 << MSTR) | (1 << SPR0); //enable spi, set as master, set clock rate fck/16
+    SPCR =  (1 << SPE) | (1 << MSTR) | (1 << SPR0); //enable spi, set as master, set clock rate fck/16
 }
 void spi_send(uint8_t data){
     SPDR = data; //load data for transmission
@@ -25,9 +25,9 @@ void spi_send_big(uint16_t data){
 // data de la forme led15_led14_led13_led12_led11_led10_led9_led8_led7_led6_led5_led4_led3_led2_led1_led0
 void send_data(uint16_t data) {
     spi_send_big(data); //fonction send 16 bits data
-
     PORTC |= (1 << PC2); //latch enable
     PORTC &= ~(1 << PC2); //disable latch
+    
 }
 
 void leds_on(){
@@ -48,12 +48,13 @@ uint16_t B = 0b0101010101010101;
 
 int main(void) {
     spi_init();
+
     while (1)
     {
-        display(A);
-        _delay_ms(1000);
-        display(B);
-        _delay_ms(1000);
+            display(A);
+            _delay_ms(1000);
+            display(B);
+            _delay_ms(1000);
     }
     return(0);
     
