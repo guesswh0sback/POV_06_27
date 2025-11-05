@@ -4,7 +4,7 @@ FIRMWARE ?= led_driver
 # --- Variables globales ---
 MCU = atmega328p
 F_CPU = 13000000
-PORT = COM5
+PORT = /dev/ttyACM0
 PROGRAMMER = usbasp
 
 SRC = $(FIRMWARE)/main.c
