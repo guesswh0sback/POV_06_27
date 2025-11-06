@@ -48,8 +48,8 @@ unsigned char USART_Receive(void){
     return UDR0;
 }
 
-void USART_Receive_string(char *buffer){
-    int indice = 99;
+void USART_Receive_string(char *buffer, int size){
+    int indice = size - 1;
     while (indice > 0)
     {
         buffer[indice] = USART_Receive();
