@@ -17,7 +17,7 @@ void LATCH_disabled();
 void LEDS_on_test();
 void LEDS_off_test();
 void data_send_bourrin(uint16_t data);
-void display_bourrin(uint16_t data);
+void display_bourrin(uint16_t data, float brightness, int time_ms);
 void set_brightness(float percentage, int time_ms);
 
 #endif /* LED_DRIVER_H */   
