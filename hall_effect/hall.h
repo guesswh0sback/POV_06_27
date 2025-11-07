@@ -5,6 +5,8 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
+void HALL_init();
+void TIMER1_init();
 
 
 #endif /* HALL_H */
