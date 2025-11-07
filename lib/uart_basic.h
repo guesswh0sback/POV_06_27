@@ -12,6 +12,6 @@ void uart_send_string(char * str);
 
 unsigned char USART_Receive(void);
 
-void USART_Receive_string(char *buffer);
+void USART_Receive_string(char *buffer, int size);
 
 #endif /* UART_BASIC_H */
