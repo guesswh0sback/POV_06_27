@@ -1,4 +1,4 @@
-#include "hall.h"
+#include "../lib/hall.h"
 
 
 volatile uint16_t last_time = 0;
@@ -24,6 +24,9 @@ void TIMER1_init(){
 
 ISR(INT0_vect){
     current_time = TCNT1;
+
+    display_bourrin(0b0101010101010101, 0.005, 100);
+
     if (first_capture){
         first_capture = 0;
     }

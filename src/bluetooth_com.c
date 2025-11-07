@@ -1,4 +1,4 @@
-#include "bluetooth_com.h"
+#include "../lib/bluetooth_com.h"
 
 #define NAME POV27
 #define PIN 0027

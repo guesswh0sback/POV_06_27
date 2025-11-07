@@ -1,4 +1,4 @@
-#include "hall.h"
+#include "../lib/hall.h"
 
 int main(void) {
     HALL_init();

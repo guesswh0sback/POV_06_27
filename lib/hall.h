@@ -6,6 +6,8 @@
 #include <avr/interrupt.h>
 #include <util/delay.h>
 
+#include "driver.h"
+
 void HALL_init();
 void TIMER1_init();
 

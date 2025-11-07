@@ -1,7 +1,7 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-#include "driver.h"
+#include "../lib/driver.h"
 
 
 uint16_t A = 0b1000000000000000;
